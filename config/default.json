@@ -1,0 +1,4 @@
+{
+  "MONGODB_URL": "mongodb://localhost:27017/mongo_express_rest",
+  "PORT": 3000
+}

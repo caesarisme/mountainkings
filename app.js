@@ -2,8 +2,9 @@ const express = require('express')
 const logger = require('morgan')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const config = require('config')
 
-mongoose.connect('mongodb://localhost:27017/mongo_express_rest', {
+mongoose.connect(config.get('MONGODB_URL'), {
   useUnifiedTopology: true,
   useNewUrlParser: true
 })
@@ -12,7 +13,6 @@ const app = express()
 
 // Route imports
 const userRoutes = require('./routes/userRoutes')
-const carRoutes = require('./routes/carRoutes')
 
 // Middlewares
 app.use(logger('dev'))
@@ -20,7 +20,6 @@ app.use(bodyParser.json())
 
 // Routes
 app.use('/users', userRoutes)
-app.use('/cars', carRoutes)
 
 // Catch 404 errors and forward them to error handler
 app.use((req, res, next) => {
@@ -44,5 +43,5 @@ app.use((err, req, res, next) => {
 })
 
 // Start the server
-const PORT = app.get('port') || 3000
+const PORT = config.get('PORT') || 3000
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`))

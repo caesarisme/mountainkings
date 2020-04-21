@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
+  email: String,
   firstName: String,
   lastName: String,
-  email: String,
   cars: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'car'

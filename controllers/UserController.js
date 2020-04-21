@@ -1,7 +1,5 @@
 // Model imports
 const User = require('../models/User')
-const Car = require('../models/Car')
-
 
 // Actions
 module.exports = {
