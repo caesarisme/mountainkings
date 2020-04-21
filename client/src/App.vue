@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import MainLayout from '@/layouts/MainLayout';
-import EmptyLayout from '@/layouts/EmptyLayout';
+import MainLayout from '@/layouts/MainLayout'
+import EmptyLayout from '@/layouts/EmptyLayout'
 
 export default {
   components: {
@@ -14,7 +14,7 @@ export default {
 
   computed: {
     layout() {
-      return `${this.$route.meta.layout || 'empty'}-layout`;
+      return `${this.$route.meta.layout || 'empty'}-layout`
     }
   }
 }
