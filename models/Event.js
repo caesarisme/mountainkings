@@ -2,10 +2,6 @@ const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
   title: { type: String, required: true },
-  organizer: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'user',
-  },
   price: { type: Number },
   image: { type: String },
   description: { type: String },
@@ -16,8 +12,8 @@ const schema = new mongoose.Schema({
 
   isUniversityEvent: { type: Boolean, default: false },
 
-  date: { type: Date },
-  registrationStartDate: { type: Date },
+  eventDate: { type: Date },
+  registrationStartDate: { type: Date, default: Date.now() },
   registrationEndDate: { type: Date },
 
   basicServices: [{
@@ -27,7 +23,12 @@ const schema = new mongoose.Schema({
     title: { type: String, required: true },
     price: { type: Number, required: true },
     description: { type: String }
-  }]
+  }],
+
+  organizer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user',
+  },
 })
 
 module.exports = mongoose.model('event', schema)
