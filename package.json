@@ -1,5 +1,5 @@
 {
-  "name": "mongo-express-rest",
+  "name": "mountainkings",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,19 +7,24 @@
     "start": "node app.js",
     "server": "nodemon --ignore './client/' app.js",
     "client": "npm run serve --prefix client",
-    "dev": "concurrently 'npm run server' 'npm run client'"
+    "dashboard": "npm run serve --prefix dashboard",
+    "dev": "concurrently 'npm run server' 'npm run client'",
+    "dashboard-dev": "concurrently 'npm run server' 'npm run dashboard'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "config": "^3.3.1",
     "express": "^4.17.1",
     "express-promise-router": "^3.0.3",
     "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.9",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",

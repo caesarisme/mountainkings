@@ -127,7 +127,7 @@ export default {
   name: 'event-payment',
 
   data: () => ({
-    paymentStep: 'kaspi',
+    paymentStep: 1,
     counter: 0,
     event: {
       id: 1,
